@@ -39,6 +39,10 @@ public class ClientController {
         return new ClientDTO(clientService.getClientAuth(authentication));
     }
 
+    @GetMapping("/clients/{id}")
+    public ClientDTO getClient(@PathVariable Long id){
+        return clientService.getClientById(id);
+    };
 
     @PostMapping("/createClient")
     public ResponseEntity<Object> register(

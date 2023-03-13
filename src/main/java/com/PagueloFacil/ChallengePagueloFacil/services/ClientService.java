@@ -15,4 +15,6 @@ public interface ClientService {
     Client getClientByEmail(String email);
 
     Client getClientAuth(Authentication authentication);
+
+    ClientDTO getClientById(Long id);
 }

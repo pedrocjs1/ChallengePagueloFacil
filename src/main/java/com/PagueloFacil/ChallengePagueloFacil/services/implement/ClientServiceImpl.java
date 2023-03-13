@@ -37,5 +37,10 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.findByEmail(authentication.getName());
     }
 
+    @Override
+    public ClientDTO getClientById(Long id) {
+        return clientRepository.findById(id).map(client -> new ClientDTO(client)).orElse(null);
+    }
+
 
 }
