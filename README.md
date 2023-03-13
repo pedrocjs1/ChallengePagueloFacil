@@ -48,7 +48,7 @@ Sustituya {id} con el ID del usuario que desea obtener.
 Loguarse
 
     Método: GET
-    URL: http://localhost:8080/api/login?email=pepe@gmail.com&password=123456
+    URL: http://localhost:8080/api/login
     Params: 
     email 
     password
