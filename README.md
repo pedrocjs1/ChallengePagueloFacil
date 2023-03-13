@@ -25,8 +25,17 @@ Si desea probar la aplicación utilizando Postman, puede hacer lo siguiente:
 Crear un usuario
 
     Método: POST
-    URL: http://localhost:8080/api/createClient?firstName=Pepe&lastName=argento&email=pepe@gmail.com&password=123456
-    Cuerpo de la solicitud (JSON):
+    URL: http://localhost:8080/api/createClient
+    Params: 
+    firstName 
+    lastName
+    email
+    123456
+    values: 
+    FirstName
+    LastName
+    email@paguelofacil.com
+    123456
 
 
 Obtener un usuario
@@ -40,8 +49,14 @@ Loguarse
 
     Método: GET
     URL: http://localhost:8080/api/login?email=pepe@gmail.com&password=123456
-
-Sustituya el valor de los params con el valor correspondiente a su usuario
+    Params: 
+    email 
+    password
+    values: 
+    {valorCorrespondiente}
+    {valorCorrespondiente}
+   
+    
 
 Obtenga todos los usuarios para luego hacer una transaccion a otro cliente
 
