@@ -67,6 +67,8 @@ Hacer una transferencia a otra cuenta existente.
 
     Método: POST
     URL: http://localhost:8080/api/transactions
+    headers:
+    Authorization
     Params: 
     description 
     amount
