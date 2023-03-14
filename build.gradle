@@ -18,6 +18,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'org.springframework.security.oauth:spring-security-oauth2:2.5.0.RELEASE'
+	testImplementation 'junit:junit:4.13.1'
+	testImplementation 'junit:junit:4.13.1'
+
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

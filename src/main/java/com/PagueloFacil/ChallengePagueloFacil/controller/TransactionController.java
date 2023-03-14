@@ -9,14 +9,14 @@ import com.PagueloFacil.ChallengePagueloFacil.services.AccountService;
 import com.PagueloFacil.ChallengePagueloFacil.services.ClientService;
 import com.PagueloFacil.ChallengePagueloFacil.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
@@ -34,11 +34,14 @@ public class TransactionController {
 
     @Transactional
     @PostMapping("/transactions")
-    public ResponseEntity<Object> createTransaction(Authentication authentication,
-                                                    @RequestParam String description,
-                                                    @RequestParam Double amount,
-                                                    @RequestParam int originAccountNumber,
-                                                    @RequestParam int targetAccountNumber) {
+    public ResponseEntity<Object> createTransaction(
+            Authentication authentication,
+            @RequestHeader(name = "Authorization", required = true) String token,
+            @RequestParam String description,
+            @RequestParam Double amount,
+            @RequestParam int originAccountNumber,
+            @RequestParam int targetAccountNumber) {
+
 
 
         Client client = clientService.getClientAuth(authentication);
